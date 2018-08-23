@@ -1,4 +1,6 @@
 HTML/CSS/JS programming exercise 1.
 Depends on specific data from a nodejs server that is not mine to share, so I will not include it here.
 
-To run the code, place the three files in some folder on your computer and open the html file in a web browser.
+The application tries to load the data from http://localhost:8080/api/getbalance
+Start the nodejs server (code is not mine to share). 
+To run the code, place the three files in the same folder on your computer and open the html file in a web browser.
