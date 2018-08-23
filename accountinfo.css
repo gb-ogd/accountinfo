@@ -1,0 +1,94 @@
+@charset "UTF-8"; 
+
+/* account div
+height of account div + height of transactions div must equal to 100% (user requirement)
+width matches the width of transactions div because it looks better
+margin: auto is required to horizontaly center the div (user requirement)
+overflow: hidden is used to hide the account information when the div gets smaller, to
+ prevent it from spilling over to the transactions div */
+#account {
+    height: 20%;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* padding the account table looks better */
+#account td {
+    padding: 10px;
+}
+
+/* transactions div
+height of account div + height of transactions div must equal 100% (user requirement)
+width is chosen to make the content look centered but still leave enough room to 
+ comfortably fit the table data 
+overflow-y: auto is used to create a vertical scrollbar when needed (user requirement) 
+margin: auto is used to center the div horizontally (user requirement) */
+#transactions {
+    height: 80%;
+    width: 70%;
+    overflow-y: auto;
+    margin: auto;
+}
+
+/* table which contains the transactions
+width is set to prevent the table from shrinking when the content narrows 
+border-collapse: collapse is used to create a continuous bottom border line */
+#transactions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* header of transaction table
+font-style: italic is chosen because I think it looks nice
+text-align: left is used to place the header column text in line with the data in that column
+border is set to create a thick line between header and table data
+padding is used to make it look less crammed
+margin is set to 0, padding is used to create some space
+bottom padding is slightly smaller than top padding */
+#transactions th {
+    font-style: italic;
+    text-align: left;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-width: 0px 0px 5px 0px;
+    margin: 0px;
+    padding: 10px 10px 5px 10px;
+}
+
+/* data column
+A subtle line is placed between data rows
+padding is used to create some empty space */
+#transactions td {
+    border-style: solid;
+    border-color: lightgray;
+    margin: 0px;
+    border-width: 0px 0px 1px 0px;
+    padding: 10px 10px 10px 10px;
+}
+
+/* Styling for currency data */
+td.Currency {
+    text-align: right;
+}
+
+/* animation used to drop in the div that indicates a communication error has occurred */
+@keyframes dropin {
+    from {top: -200px;}
+    to {top: 100px;}
+}
+
+/* div that indicates that a communication error has occurred */
+#RetryStatus {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: yellow;
+    animation-name: dropin;
+    animation-duration: 0.5s;
+}
